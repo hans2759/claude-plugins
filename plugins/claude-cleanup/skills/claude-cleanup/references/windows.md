@@ -53,7 +53,7 @@ Windows 凭据位置参见 [Claude Code 官方认证文档](https://code.claude.
 
 首个写操作创建 `%USERPROFILE%\ClaudeBackups\claude-cleanup-windows-时间戳.partial`，复制现存 `.claude` 与 `.claude.json`，比较路径、类型、大小和逐文件 SHA-256，再改为正式批次名。没有 CLI 配置的 Desktop 用户仍可清理，`manifest.json` 记录缺失的源。备份失败只保留 `.partial`，不移动清理目标。
 
-移除项进入 `%USERPROFILE%\ClaudeCleanup Trash\批次名`，这是普通隔离目录，不是 Windows 回收站。移动使用同卷重命名，不做跨卷复制后删除。完整 Code 备份加隔离可能增加空间占用，不能报告“释放了同等大小的空间”。
+移除项进入 `%USERPROFILE%\ClaudeCleanupTrash\批次名`，这是普通隔离目录，不是 Windows 回收站。移动使用同卷重命名，不做跨卷复制后删除。完整 Code 备份加隔离可能增加空间占用，不能报告“释放了同等大小的空间”。
 
 备份中的 `moves.json` 记录每项原路径、隔离路径及 `planned`/`moved` 状态。中途失败时已成功移动的项留在隔离目录，不自动回滚、不继续后续操作。报告备份位置和错误；如果日志更新本身失败，状态可能停留在 `planned`，应只读核实源和目标是否存在。
 
