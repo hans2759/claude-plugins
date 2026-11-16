@@ -38,6 +38,6 @@ description: 审计、备份和清理 macOS 或原生 Windows 上 Claude Code / 
 - Windows 保留 Desktop MCP 配置和扩展，只移动白名单子项；macOS 的整目录 Desktop 重置会连同其中的 MCP 配置和扩展一起移入废纸篓，必须提前说明这一差异。
 - 首个写操作用于完整备份现存 Claude Code 状态。Windows 使用 SHA-256 校验，并拒绝链接、junction、其他 reparse point 和含 Git 仓库的清理目标；遇到这些布局不要自行解引用或扩大白名单。
 
-Windows 用 `%USERPROFILE%\ClaudeCleanup Trash` 普通隔离目录；macOS 用 `~/.Trash` 下的批次目录。不要把 Windows 隔离目录称作系统回收站。备份、隔离及废纸篓可能含凭据与会话，均不上传、不自动清空。
+Windows 用 `%USERPROFILE%\ClaudeCleanupTrash` 普通隔离目录；macOS 用 `~/.Trash` 下的批次目录。不要把 Windows 隔离目录称作系统回收站。备份、隔离及废纸篓可能含凭据与会话，均不上传、不自动清空。
 
 本 skill 仅处理本机状态，不承诺退出所有认证方式、撤销远程令牌、释放等量磁盘空间或改变平台关联判断；不用于规避封禁、支付检查、设备/IP 信誉或其他平台风控。
